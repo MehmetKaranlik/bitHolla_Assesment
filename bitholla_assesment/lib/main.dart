@@ -1,5 +1,9 @@
-import 'package:bitholla_assesment/view/coin_detail/view/coin_detail_view.dart';
+import 'package:bitholla_assesment/core/base/binding/base_bindings.dart';
+import 'package:bitholla_assesment/core/init/theme/app_theme_light.dart';
+import 'package:bitholla_assesment/view/base/view/home_view.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,14 +14,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-
-        primarySwatch: Colors.blue,
-      ),
-      home: const CoinDetailView()
+    return Sizer(
+      builder: (context, orientation, deviceType) {
+        return GetMaterialApp(
+            debugShowCheckedModeBanner: false,
+            initialBinding: BaseBinding(),
+            theme: AppThemeLight.instance.theme,
+            home: const HomeView());
+      },
     );
   }
 }
-
