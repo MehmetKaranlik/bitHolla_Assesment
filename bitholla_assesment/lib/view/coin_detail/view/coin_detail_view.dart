@@ -5,6 +5,7 @@ import 'package:bitholla_assesment/core/widget/sizedBox/dynamic_horizontol_space
 import 'package:bitholla_assesment/core/widget/sizedBox/dynamic_veritical_space.dart';
 import 'package:bitholla_assesment/product/widget/groups/chart_sorter/widget/chart_sort_button_group.dart';
 import 'package:bitholla_assesment/product/widget/groups/coin_detail_tab/widget/coin_detail_tab.dart';
+import 'package:bitholla_assesment/product/widget/groups/double_sided_list_view/widget/double_sided_list_view.dart';
 import 'package:bitholla_assesment/view/coin_detail/controller/coin_detail_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -46,9 +47,158 @@ class CoinDetailView extends BaseView<CoinDetailViewController> {
           _buildDateTimeNow(context),
           _buildUpperStack(context),
           DynamicVerticalSpace(),
-          CoinDetailTabGroup()
+          const CoinDetailTabGroup(),
+          DynamicVerticalSpace(),
+          _buildTags(context),
+          _buildSeperator(context),
+          const Expanded(
+            child: DoubleSidedListView(),
+          ),
         ],
       ),
+    );
+  }
+
+  Row _buildTags(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        DynamicHorizontalSpace(
+          width: 2.w,
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Total",
+              style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
+            ),
+            Text(
+              "(XHT)",
+              style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
+            )
+          ],
+        ),
+        DynamicHorizontalSpace(
+          width: 7.w,
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              "Amount",
+              style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
+            ),
+            Text(
+              "(XHT)",
+              style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
+            )
+          ],
+        ),
+        DynamicHorizontalSpace(
+          width: 15.w,
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              "Price",
+              style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
+            ),
+            Text(
+              "(USDT)",
+              style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
+            )
+          ],
+        ),
+        DynamicHorizontalSpace(
+          width: 12.w,
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              "Amount",
+              style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
+            ),
+            Text(
+              "(XHT)",
+              style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
+            )
+          ],
+        ),
+        Spacer(),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Total",
+              style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
+            ),
+            Text(
+              "(XHT)",
+              style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
+            )
+          ],
+        ),
+        DynamicHorizontalSpace(
+          width: 2.w,
+        )
+      ],
+    );
+  }
+
+  Row _buildSeperator(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        _buildLeftSideText(context),
+        _buildLeftSideDivider(context),
+        DynamicHorizontalSpace(
+          width: 3.w,
+        ),
+        _buildRightSideDivider(context),
+        DynamicHorizontalSpace(
+          width: 3.w,
+        ),
+        _buildRightSideText(context)
+      ],
+    );
+  }
+
+  Text _buildRightSideText(BuildContext context) {
+    return Text(
+      "Seller",
+      style: context.textTheme.bodyText1,
+    );
+  }
+
+  SizedBox _buildRightSideDivider(BuildContext context) {
+    return SizedBox(
+      width: 30.w,
+      child: Divider(
+        indent: 5.w,
+        color: context.theme.colorScheme.primary,
+        thickness: 0.4.w,
+      ),
+    );
+  }
+
+  SizedBox _buildLeftSideDivider(BuildContext context) {
+    return SizedBox(
+      width: 30.w,
+      child: Divider(
+        indent: 5.w,
+        color: context.theme.colorScheme.error,
+        thickness: 0.4.w,
+      ),
+    );
+  }
+
+  Text _buildLeftSideText(BuildContext context) {
+    return Text(
+      "Buyer",
+      style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.error),
     );
   }
 

@@ -63,7 +63,6 @@ class _CoinDetailTabButtonState extends State<CoinDetailTabButton> {
         return const BorderRadius.all(Radius.circular(0));
       case 2:
         return BorderRadius.only(topRight: Radius.circular(2.w), bottomRight: Radius.circular(2.w));
-
       default:
         throw "";
     }
