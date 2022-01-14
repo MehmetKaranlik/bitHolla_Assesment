@@ -21,7 +21,7 @@ class HomeView extends BaseView<HomeController> {
 Widget showSelectedBody(int index) {
   switch (index) {
     case 0:
-      return const CoinDetailView();
+      return  CoinDetailView();
     case 1:
       return Container();
     case 2:

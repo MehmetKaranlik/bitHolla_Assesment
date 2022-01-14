@@ -9,8 +9,8 @@ class BaseBinding implements Bindings {
       return HomeController();
     }, fenix: true);
 
-    Get.lazyPut<CointDetailViewController>(() {
-      return CointDetailViewController();
+    Get.lazyPut<CoinDetailViewController>(() {
+      return CoinDetailViewController();
     }, fenix: true);
   }
 }

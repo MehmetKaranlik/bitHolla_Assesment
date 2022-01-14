@@ -61,7 +61,7 @@ class AppThemeLight extends AppTheme with ILightTheme {
       surface: Colors.transparent,
       onPrimary: colorSchemeLight.grey,
       onSecondary: Colors.transparent,
-      onSurface: Colors.transparent,
+      onSurface: colorSchemeLight.shadowColor,
       onBackground: Colors.transparent,
       onError: colorSchemeLight.red,
       background: colorSchemeLight.white,

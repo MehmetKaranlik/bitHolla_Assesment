@@ -15,6 +15,7 @@ class ColorSchemeLight {
   final Color red = const Color(0xfffd687d);
   final Color grey = const Color(0xff9e9db6);
   final Color white = const Color(0xffffffff);
+  final Color shadowColor = const Color(0x1a000000);
 
 
 
