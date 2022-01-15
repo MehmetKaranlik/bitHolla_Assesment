@@ -2,7 +2,6 @@ import 'package:bitholla_assesment/core/base/service/base_service.dart';
 import 'package:bitholla_assesment/core/constants/enum/network_path.dart';
 import 'package:bitholla_assesment/view/coin_detail/model/currency_chart_model.dart';
 import 'package:bitholla_assesment/view/coin_detail/service/ICoin_detail_service.dart';
-import 'package:vexana/src/interface/INetworkService.dart';
 import 'package:vexana/vexana.dart';
 
 class CoinDetailService extends ICoinDetailViewService {

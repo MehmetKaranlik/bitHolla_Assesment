@@ -1,28 +1,38 @@
+// ignore_for_file: invalid_use_of_protected_member
+
+import 'dart:async';
+import 'dart:convert';
+
 import 'package:bitholla_assesment/core/base/controller/base_controller.dart';
 import 'package:bitholla_assesment/core/base/service/base_service.dart';
 import 'package:bitholla_assesment/core/constants/application/application_constants.dart';
+import 'package:bitholla_assesment/core/constants/enum/network_path.dart';
 import 'package:bitholla_assesment/view/coin_detail/model/currency_chart_model.dart';
 import 'package:bitholla_assesment/view/coin_detail/service/coin_detail_service.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
+import 'package:web_socket_channel/io.dart';
+import 'package:web_socket_channel/status.dart' as status;
 
 class CoinDetailViewController extends BaseController {
   late final CoinDetailService _service;
   var dateTimeNow = DateTime.now().toString();
+  Rx<IOWebSocketChannel> _channel = IOWebSocketChannel.connect(
+          NetworkPath.WEB_SOCKET_BASE_URL.path + NetworkPath.STREAM_PATH.path,
+          pingInterval: Duration(seconds: 30))
+      .obs;
+  IOWebSocketChannel get channel => _channel.value;
+
 // Chart data observable variable&getter&setter
   final RxList<CurrencyPriceChartModel> _chartData = <CurrencyPriceChartModel>[].obs;
+
   List<CurrencyPriceChartModel> get chartData => _chartData.value;
   set chartData(List<CurrencyPriceChartModel> val) => _chartData.value = val;
-
   //0 => 1 year, 1 => 1 month, 2 => 1 week, 3 => 1 day, 4=> 1 hour corresponding values on switch case below
   final RxInt _zoomOption = 0.obs;
   int get zoomOption => _zoomOption.value;
   set zoomOption(int val) => _zoomOption.value = val;
-
-
-
-
 
   final RxBool _isLoading = false.obs;
   bool get isLoading => _isLoading.value;
@@ -32,7 +42,21 @@ class CoinDetailViewController extends BaseController {
   void onInit() {
     _service = CoinDetailService(networkManager);
     getCurrenyChartData();
+    createSocket();
     super.onInit();
+  }
+  @override
+  void onClose() {
+    channel.sink.close(status.goingAway);
+  }
+
+
+  void createSocket() {
+    channel.sink.add(jsonEncode({'op': 'ping'}));
+    channel.sink.add(jsonEncode({
+      'op': 'subscribe',
+      'args': ['orderbook:xht-usdt']
+    }));
   }
 
   Future<void> getCurrenyChartData() async {
@@ -42,9 +66,7 @@ class CoinDetailViewController extends BaseController {
       chartData.clear();
       chartData = data;
       isLoading = false;
-      print("if çalıştı $isLoading");
     }
-    print("if çalışmadı $isLoading");
   }
 
   List<AreaSeries<CurrencyPriceChartModel, DateTime>> getDefaultLineSeries(BuildContext context) {
@@ -59,21 +81,5 @@ class CoinDetailViewController extends BaseController {
     ];
   }
 
-  // 403 response-- not working on demo app
-  String defineZoomLevel(int input) {
-    switch (input) {
-      case 0:
-        return DateTime.fromMicrosecondsSinceEpoch(DateTime.now().year - 1).toString();
-      case 1:
-        return DateTime.fromMicrosecondsSinceEpoch(DateTime.now().month - 1).toString();
-      case 2:
-        return DateTime.fromMicrosecondsSinceEpoch(DateTime.now().day - 7).toString();
-      case 3:
-        return DateTime.fromMicrosecondsSinceEpoch(DateTime.now().day - 1).toString();
-      case 4:
-        return DateTime.fromMicrosecondsSinceEpoch(DateTime.now().hour - 1).toString();
-      default:
-        throw "error";
-    }
-  }
+  
 }

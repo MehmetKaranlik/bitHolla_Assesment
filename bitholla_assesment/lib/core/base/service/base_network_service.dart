@@ -1,9 +1,5 @@
-import 'dart:io';
 import 'package:bitholla_assesment/core/constants/enum/network_path.dart';
-import 'package:get/get.dart';
 import 'package:vexana/vexana.dart';
-
-
 
 class BaseNetworkService {
   static BaseNetworkService? _instance;
@@ -23,20 +19,11 @@ class BaseNetworkService {
   }
 
   NetworkManager networkManagerOptions() {
-   
     return NetworkManager(
-
         options: BaseOptions(
           baseUrl: NetworkPath.BASE_URL.path,
         ),
-        onRefreshFail: () async {
-  
-        },
-  
-        isEnableLogger: true);
+        onRefreshFail: () async {},
+        isEnableLogger: false);
   }
-
-  
-
-  
 }

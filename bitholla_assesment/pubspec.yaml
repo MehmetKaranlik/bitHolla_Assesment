@@ -22,9 +22,12 @@ dependencies:
   sizer: ^2.0.15
   flutter_svg: ^1.0.1
   syncfusion_flutter_charts: ^19.4.42
+  intl: ^0.17.0
+  shimmer: ^2.0.0
 
   #networking
   vexana: ^2.5.0
+  web_socket_channel: ^2.1.0
 
 dev_dependencies:
   flutter_test:

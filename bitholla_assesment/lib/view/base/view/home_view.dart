@@ -21,14 +21,12 @@ class HomeView extends BaseView<HomeController> {
 Widget showSelectedBody(int index) {
   switch (index) {
     case 0:
-      return  CoinDetailView();
+      return Container();
     case 1:
       return Container();
     case 2:
-      return Container();
+      return const CoinDetailView();
     case 3:
-      return Container();
-    case 4:
       return Container();
     default:
       throw Container();
@@ -49,54 +47,42 @@ BottomAppBar _bottomAppBar(BuildContext context, HomeController controller) {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Obx(() => IconButton(
-              onPressed: () {
-                controller.selectedBody = 0;
-              },
-              alignment: Alignment.center,
+              onPressed: () {},
               padding: EdgeInsets.zero,
+              alignment: Alignment.center,
               iconSize: 25.sp,
               icon: Icon(
-                Icons.ac_unit,
+                Icons.home,
                 color: defineColor(controller, 0, context),
               ))),
           Obx(() => IconButton(
-              onPressed: () {
-                controller.selectedBody = 1;
-              },
+              onPressed: () {},
               padding: EdgeInsets.zero,
               alignment: Alignment.center,
               iconSize: 25.sp,
               icon: Icon(
-                Icons.ac_unit,
+                Icons.badge_outlined,
                 color: defineColor(controller, 1, context),
               ))),
           Obx(() => IconButton(
-              onPressed: () {
-                controller.selectedBody = 2;
-              },
+              onPressed: () {},
               padding: EdgeInsets.zero,
               alignment: Alignment.center,
               iconSize: 25.sp,
               icon: Icon(
-                Icons.ac_unit,
+                Icons.attach_money_rounded,
                 color: defineColor(controller, 2, context),
               ))),
           Obx(() => IconButton(
-              onPressed: () {
-                controller.selectedBody = 3;
-              },
-              padding: EdgeInsets.zero,
-              alignment: Alignment.center,
-              iconSize: 25.sp,
-              icon: Icon(Icons.ac_unit, color: defineColor(controller, 3, context)))),
-          Obx(() => IconButton(
-              onPressed: () {
-                controller.selectedBody = 4;
-              },
-              padding: EdgeInsets.zero,
-              alignment: Alignment.center,
-              iconSize: 25.sp,
-              icon: Icon(Icons.ac_unit, color: defineColor(controller, 4, context)))),
+                onPressed: () {},
+                padding: EdgeInsets.zero,
+                alignment: Alignment.center,
+                iconSize: 25.sp,
+                icon: Icon(
+                  Icons.person,
+                  color: defineColor(controller, 3, context),
+                ),
+              )),
         ],
       ),
     ),

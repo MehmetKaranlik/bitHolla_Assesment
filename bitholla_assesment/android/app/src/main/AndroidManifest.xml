@@ -1,6 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.bitholla_assesment">
-    <uses-permission android:name="android.permission.INTERNET" />
+    package="com.bitholla_assesment">
    <application
         android:label="bitholla_assesment"
         android:name="${applicationName}"
@@ -32,4 +31,5 @@
             android:name="flutterEmbedding"
             android:value="2" />
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

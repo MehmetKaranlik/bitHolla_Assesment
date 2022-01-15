@@ -3,11 +3,10 @@ import 'package:bitholla_assesment/product/widget/button/chart_sorter_button.dar
 import 'package:bitholla_assesment/product/widget/groups/chart_sorter/controller/chart_sort_button_group_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/instance_manager.dart';
 import 'package:sizer/sizer.dart';
 
 class ChartSortButtonGroup extends StatefulWidget {
-  ChartSortButtonGroup({
+  const ChartSortButtonGroup({
     Key? key,
   }) : super(key: key);
 

@@ -9,4 +9,5 @@ class SvgConstants {
   String toSvg(String value) => 'assets/svg/$value.svg';
   // Favrea Logo
   String get bitcoinIcon => toSvg('bitcoin_icon');
+  String get allPageIcon => toSvg('all_page_icon');
 }

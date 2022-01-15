@@ -8,8 +8,12 @@ import 'package:get/instance_manager.dart';
 import 'package:sizer/sizer.dart';
 
 class DoubleSidedListView extends StatefulWidget {
+  final List<List<double>> leftList;
+  final List<List<double>> rightList;
   const DoubleSidedListView({
     Key? key,
+    required this.leftList,
+    required this.rightList,
   }) : super(key: key);
 
   @override
@@ -45,7 +49,7 @@ class _DoubleSidedListViewState extends State<DoubleSidedListView> {
 
   SizedBox _buildRightListView() {
     return SizedBox(
-      width: 48.w,
+      width: 45.w,
       child: ListView.separated(
         shrinkWrap: true,
         itemBuilder: (context, index) => GestureDetector(
@@ -53,7 +57,7 @@ class _DoubleSidedListViewState extends State<DoubleSidedListView> {
           child: Obx(() => _buildRightSideListTile(index, context)),
         ),
         separatorBuilder: (context, index) => DynamicVerticalSpace(height: 1.h),
-        itemCount: 10,
+        itemCount: widget.rightList.length,
       ),
     );
   }
@@ -62,6 +66,7 @@ class _DoubleSidedListViewState extends State<DoubleSidedListView> {
     return Container(
       color: _controller.rightSelectedIndex == index ? context.theme.colorScheme.primary : Colors.transparent,
       height: 3.h,
+      width: 45.w,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -69,29 +74,19 @@ class _DoubleSidedListViewState extends State<DoubleSidedListView> {
           DynamicHorizontalSpace(
             width: 4.w,
           ),
+          const Spacer(),
           _buildRightSideAmount(context, index),
           DynamicHorizontalSpace(
             width: 4.w,
           ),
-          _buildRightSideTotalAmount(context)
         ],
-      ),
-    );
-  }
-
-  Container _buildRightSideTotalAmount(BuildContext context) {
-    return Container(
-      color: Colors.green,
-      child: Text(
-        "0.2269",
-        style: context.textTheme.bodyText2!.copyWith(fontSize: 10.sp, color: context.theme.colorScheme.background),
       ),
     );
   }
 
   Text _buildRightSideAmount(BuildContext context, int index) {
     return Text(
-      "0.2269",
+      widget.rightList[index][1].toString(),
       style: context.textTheme.bodyText2!.copyWith(
           fontSize: 10.sp,
           color: _controller.rightSelectedIndex == index
@@ -102,7 +97,7 @@ class _DoubleSidedListViewState extends State<DoubleSidedListView> {
 
   Text _buildRightSidePrice(BuildContext context, int index) {
     return Text(
-      "0.2269",
+      widget.rightList[index][0].toString(),
       style: context.textTheme.bodyText2!.copyWith(
           fontSize: 10.sp,
           color: _controller.rightSelectedIndex == index
@@ -113,7 +108,7 @@ class _DoubleSidedListViewState extends State<DoubleSidedListView> {
 
   SizedBox _buildLeftListView() {
     return SizedBox(
-      width: 48.w,
+      width: 45.w,
       child: ListView.separated(
         shrinkWrap: true,
         itemBuilder: (context, index) => GestureDetector(
@@ -121,7 +116,7 @@ class _DoubleSidedListViewState extends State<DoubleSidedListView> {
           child: Obx(() => _buildLeftSideListTile(index, context)),
         ),
         separatorBuilder: (context, index) => DynamicVerticalSpace(height: 1.h),
-        itemCount: 10,
+        itemCount: widget.leftList.length,
       ),
     );
   }
@@ -134,14 +129,11 @@ class _DoubleSidedListViewState extends State<DoubleSidedListView> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          _buildLeftSideTotalAmount(context),
           DynamicHorizontalSpace(
             width: 4.w,
           ),
           _buildLeftSideAmount(context, index),
-          DynamicHorizontalSpace(
-            width: 4.w,
-          ),
+          const Spacer(),
           _buildLeftSidePrice(context, index),
         ],
       ),
@@ -150,7 +142,7 @@ class _DoubleSidedListViewState extends State<DoubleSidedListView> {
 
   Text _buildLeftSidePrice(BuildContext context, int index) {
     return Text(
-      "0.2269",
+      widget.leftList[index][0].toString(),
       style: context.textTheme.bodyText2!.copyWith(
           fontSize: 10.sp,
           color: _controller.leftSelectedIndex == index
@@ -161,7 +153,7 @@ class _DoubleSidedListViewState extends State<DoubleSidedListView> {
 
   Text _buildLeftSideAmount(BuildContext context, int index) {
     return Text(
-      "0.2269",
+      widget.leftList[index][1].toString(),
       style: context.textTheme.bodyText2!.copyWith(
           fontSize: 10.sp,
           color: _controller.leftSelectedIndex == index
@@ -170,13 +162,4 @@ class _DoubleSidedListViewState extends State<DoubleSidedListView> {
     );
   }
 
-  Container _buildLeftSideTotalAmount(BuildContext context) {
-    return Container(
-      color: context.theme.colorScheme.error,
-      child: Text(
-        "0.2269",
-        style: context.textTheme.bodyText2!.copyWith(fontSize: 10.sp, color: context.theme.colorScheme.background),
-      ),
-    );
-  }
 }

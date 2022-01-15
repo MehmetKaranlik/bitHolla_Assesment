@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:bitholla_assesment/core/base/view/base_view.dart';
 import 'package:bitholla_assesment/core/constants/assets/svg_constants.dart';
 import 'package:bitholla_assesment/core/extension/context_extension.dart';
@@ -7,9 +9,12 @@ import 'package:bitholla_assesment/product/widget/groups/chart_sorter/widget/cha
 import 'package:bitholla_assesment/product/widget/groups/coin_detail_tab/widget/coin_detail_tab.dart';
 import 'package:bitholla_assesment/product/widget/groups/double_sided_list_view/widget/double_sided_list_view.dart';
 import 'package:bitholla_assesment/view/coin_detail/controller/coin_detail_controller.dart';
+import 'package:bitholla_assesment/view/coin_detail/model/coin_ask_and_bid_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:intl/intl.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:sizer/sizer.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
@@ -32,30 +37,63 @@ class CoinDetailView extends BaseView<CoinDetailViewController> {
     );
   }
 
-  SizedBox _buildBody(BuildContext context) {
-    return SizedBox(
-      width: 100.w,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          DynamicVerticalSpace(),
-          _buildWalletAmount(context),
-          DynamicVerticalSpace(
-            height: 1.h,
-          ),
-          _buildDateTimeNow(context),
-          _buildUpperStack(context),
-          DynamicVerticalSpace(),
-          const CoinDetailTabGroup(),
-          DynamicVerticalSpace(),
-          _buildTags(context),
-          _buildSeperator(context),
-          const Expanded(
-            child: DoubleSidedListView(),
-          ),
-        ],
-      ),
+  Widget _buildBody(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisSize: MainAxisSize.max,
+      children: [
+        DynamicVerticalSpace(),
+        _buildWalletAmount(context),
+        DynamicVerticalSpace(
+          height: 1.h,
+        ),
+        _buildDateTimeNow(context),
+        _buildUpperStack(context),
+        DynamicVerticalSpace(),
+        const CoinDetailTabGroup(),
+        DynamicVerticalSpace(),
+        _buildTags(context),
+        _buildSeperator(context),
+        _buildBuyerAndSellerStream()
+      ],
+    );
+  }
+
+  Expanded _buildBuyerAndSellerStream() {
+    return Expanded(
+      child: Obx(() => StreamBuilder(
+            stream: controller.channel.stream,
+            builder: (context, AsyncSnapshot? snapshot) {
+              if (snapshot!.hasData && !snapshot.data.toString().contains('message')) {
+                print(snapshot.data);
+                var response = CoinAskAndBidModel.fromJson(jsonDecode(snapshot.data));
+                return _buildDoubleSidedListView(response);
+              }
+              return _buildPlaceHolder(context);
+            },
+          )),
+    );
+  }
+
+  DoubleSidedListView _buildDoubleSidedListView(CoinAskAndBidModel response) {
+    return DoubleSidedListView(
+      leftList: response.data!.asks!,
+      rightList: response.data!.bids!,
+    );
+  }
+
+  Container _buildPlaceHolder(BuildContext context) {
+    return Container(
+      height: 30.h,
+      alignment: Alignment.center,
+      width: context.width,
+      child: Shimmer.fromColors(
+          baseColor: context.theme.colorScheme.onPrimary,
+          highlightColor: context.theme.colorScheme.primary,
+          child: Text(
+            "Loading...",
+            style: context.textTheme.headline1!.copyWith(fontSize: 30.sp),
+          )),
     );
   }
 
@@ -65,22 +103,6 @@ class CoinDetailView extends BaseView<CoinDetailViewController> {
       children: [
         DynamicHorizontalSpace(
           width: 2.w,
-        ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "Total",
-              style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
-            ),
-            Text(
-              "(XHT)",
-              style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
-            )
-          ],
-        ),
-        DynamicHorizontalSpace(
-          width: 7.w,
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -95,9 +117,7 @@ class CoinDetailView extends BaseView<CoinDetailViewController> {
             )
           ],
         ),
-        DynamicHorizontalSpace(
-          width: 15.w,
-        ),
+        const Spacer(),
         Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -111,28 +131,12 @@ class CoinDetailView extends BaseView<CoinDetailViewController> {
             )
           ],
         ),
-        DynamicHorizontalSpace(
-          width: 12.w,
-        ),
+        const Spacer(),
         Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
               "Amount",
-              style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
-            ),
-            Text(
-              "(XHT)",
-              style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
-            )
-          ],
-        ),
-        Spacer(),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "Total",
               style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
             ),
             Text(
@@ -204,7 +208,7 @@ class CoinDetailView extends BaseView<CoinDetailViewController> {
 
   Text _buildDateTimeNow(BuildContext context) {
     return Text(
-      "14:33, 26 Jun 2018",
+     "12", //DateFormat.yMd().add_jm().format(DateTime.now()),
       style: context.textTheme.subtitle2!.copyWith(color: context.theme.colorScheme.onPrimary),
     );
   }
@@ -232,7 +236,7 @@ class CoinDetailView extends BaseView<CoinDetailViewController> {
     return Positioned(
       top: 17.h,
       left: 5.w,
-      child: ChartSortButtonGroup(),
+      child: const ChartSortButtonGroup(),
     );
   }
 
