@@ -1,8 +1,6 @@
-// ignore_for_file: invalid_use_of_protected_member
-
+// ignore_for_file: invalid_use_of_protected_member, prefer_final_fields
 import 'dart:async';
 import 'dart:convert';
-
 import 'package:bitholla_assesment/core/base/controller/base_controller.dart';
 import 'package:bitholla_assesment/core/base/service/base_service.dart';
 import 'package:bitholla_assesment/core/constants/application/application_constants.dart';
@@ -18,17 +16,19 @@ import 'package:web_socket_channel/status.dart' as status;
 class CoinDetailViewController extends BaseController {
   late final CoinDetailService _service;
   var dateTimeNow = DateTime.now().toString();
+
+  //web socket observable value
   Rx<IOWebSocketChannel> _channel = IOWebSocketChannel.connect(
-          NetworkPath.WEB_SOCKET_BASE_URL.path + NetworkPath.STREAM_PATH.path,
-          pingInterval: Duration(seconds: 30))
-      .obs;
+    NetworkPath.WEB_SOCKET_BASE_URL.path + NetworkPath.STREAM_PATH.path,
+    pingInterval: const Duration(seconds: 30),
+  ).obs;
   IOWebSocketChannel get channel => _channel.value;
 
-// Chart data observable variable&getter&setter
+  // Chart data observable variable&getter&setter
   final RxList<CurrencyPriceChartModel> _chartData = <CurrencyPriceChartModel>[].obs;
-
   List<CurrencyPriceChartModel> get chartData => _chartData.value;
   set chartData(List<CurrencyPriceChartModel> val) => _chartData.value = val;
+
   //0 => 1 year, 1 => 1 month, 2 => 1 week, 3 => 1 day, 4=> 1 hour corresponding values on switch case below
   final RxInt _zoomOption = 0.obs;
   int get zoomOption => _zoomOption.value;
@@ -45,11 +45,11 @@ class CoinDetailViewController extends BaseController {
     createSocket();
     super.onInit();
   }
+
   @override
   void onClose() {
     channel.sink.close(status.goingAway);
   }
-
 
   void createSocket() {
     channel.sink.add(jsonEncode({'op': 'ping'}));
@@ -80,6 +80,4 @@ class CoinDetailViewController extends BaseController {
           markerSettings: const MarkerSettings(isVisible: false))
     ];
   }
-
-  
 }
