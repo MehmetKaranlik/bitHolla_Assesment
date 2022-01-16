@@ -63,6 +63,7 @@ class CoinDetailView extends BaseView<CoinDetailViewController> {
     return Expanded(
       child: Obx(() => StreamBuilder(
             stream: controller.channel.stream,
+            
             builder: (context, AsyncSnapshot? snapshot) {
               if (snapshot!.hasData && !snapshot.data.toString().contains('message')) {
                 print(snapshot.data);
