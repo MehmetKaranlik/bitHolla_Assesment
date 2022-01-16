@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:bitholla_assesment/core/base/view/base_view.dart';
 import 'package:bitholla_assesment/core/constants/assets/svg_constants.dart';
 import 'package:bitholla_assesment/core/extension/context_extension.dart';
@@ -13,7 +12,6 @@ import 'package:bitholla_assesment/view/coin_detail/model/coin_ask_and_bid_model
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:intl/intl.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:sizer/sizer.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
@@ -59,21 +57,21 @@ class CoinDetailView extends BaseView<CoinDetailViewController> {
     );
   }
 
-  Expanded _buildBuyerAndSellerStream() {
-    return Expanded(
-      child: Obx(() => StreamBuilder(
-            stream: controller.channel.stream,
-            builder: (context, AsyncSnapshot? snapshot) {
-              if (snapshot!.hasData && !snapshot.data.toString().contains('message')) {
-                print(snapshot.data);
-                var response = CoinAskAndBidModel.fromJson(jsonDecode(snapshot.data));
-                return _buildDoubleSidedListView(response);
-              }
-              return _buildPlaceHolder(context);
-            },
-          )),
-    );
-  }
+ Expanded _buildBuyerAndSellerStream() {
+   return Expanded(
+     child: Obx(() => StreamBuilder(
+           stream: controller.channel.stream,
+           builder: (context, AsyncSnapshot? snapshot) {
+             if (snapshot!.hasData && !snapshot.data.toString().contains('message')) {
+               print(snapshot.data);
+               var response = CoinAskAndBidModel.fromJson(jsonDecode(snapshot.data));
+               return _buildDoubleSidedListView(response);
+             }
+             return _buildPlaceHolder(context);
+           },
+         )),
+   );
+ }
 
   DoubleSidedListView _buildDoubleSidedListView(CoinAskAndBidModel response) {
     return DoubleSidedListView(
@@ -208,7 +206,7 @@ class CoinDetailView extends BaseView<CoinDetailViewController> {
 
   Text _buildDateTimeNow(BuildContext context) {
     return Text(
-     "12", //DateFormat.yMd().add_jm().format(DateTime.now()),
+      "12", //DateFormat.yMd().add_jm().format(DateTime.now()),
       style: context.textTheme.subtitle2!.copyWith(color: context.theme.colorScheme.onPrimary),
     );
   }
@@ -222,15 +220,15 @@ class CoinDetailView extends BaseView<CoinDetailViewController> {
     );
   }
 
-  Obx _buildUpperStack(BuildContext context) {
-    return Obx(() => Stack(
-          fit: StackFit.passthrough,
-          children: [
-            _buildChart(context),
-            _buildChartSortButton(),
-          ],
-        ));
-  }
+Obx _buildUpperStack(BuildContext context) {
+  return Obx(() => Stack(
+        fit: StackFit.passthrough,
+        children: [
+          _buildChart(context),
+          _buildChartSortButton(),
+        ],
+      ));
+}
 
   Positioned _buildChartSortButton() {
     return Positioned(
