@@ -17,12 +17,12 @@ import 'package:web_socket_channel/status.dart' as status;
 class CoinDetailViewController extends BaseController {
   late final CoinDetailService _service;
   var dateTimeNow = DateTime.now().toString();
+  late final Timer _timer;
 
   //web socket observable value
- Rx<IOWebSocketChannel> _channel = IOWebSocketChannel.connect(
-   NetworkPath.WEB_SOCKET_BASE_URL.path + NetworkPath.STREAM_PATH.path,
-   pingInterval: const Duration(seconds: 30),
- ).obs;
+  Rx<IOWebSocketChannel> _channel = IOWebSocketChannel.connect(
+    NetworkPath.WEB_SOCKET_BASE_URL.path + NetworkPath.STREAM_PATH.path,
+  ).obs;
   IOWebSocketChannel get channel => _channel.value;
 
   // Chart data observable variable&getter&setter
@@ -54,35 +54,49 @@ class CoinDetailViewController extends BaseController {
   }
 
   @override
-  void onClose() {
-   channel.stream.listen(
-     (event) {},
-     onDone: () {
-       channel.sink.add((jsonEncode({
-         'op': 'unsubscribe',
-         'args': ['orderbook:xht-usdt']
-       })));
-     },
-   );
-   channel.sink.close(
-     status.goingAway,
-   );
+  void onClose() {}
+
+  @override
+  void dispose() {
+    _timer.cancel();
+    channel.stream.listen(
+      (event) {},
+      onDone: () {
+        channel.sink.add((jsonEncode({
+          'op': 'unsubscribe',
+          'args': ['orderbook:xht-usdt']
+        })));
+      },
+    );
+    channel.sink.close(
+      status.goingAway,
+    );
+    super.dispose();
   }
- void createSocket() {
-   channel.sink.add(
-     jsonEncode(
-       {'op': 'ping'},
-     ),
-   );
-   channel.sink.add(
-     jsonEncode(
-       {
-         'op': 'subscribe',
-         'args': ['orderbook:xht-usdt']
-       },
-     ),
-   );
- }
+
+  void createSocket() {
+    _timer = Timer.periodic(const Duration(seconds: 30), (timer) {
+      channel.sink.add(
+        jsonEncode(
+          {'op': 'ping'},
+        ),
+      );
+    });
+    channel.sink.add(
+      jsonEncode(
+        {'op': 'ping'},
+      ),
+    );
+
+    channel.sink.add(
+      jsonEncode(
+        {
+          'op': 'subscribe',
+          'args': ['orderbook:xht-usdt']
+        },
+      ),
+    );
+  }
 
   Future<void> getCurrenyChartData() async {
     isLoading = true;

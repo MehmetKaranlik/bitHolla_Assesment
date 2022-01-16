@@ -8,7 +8,7 @@ extension NetworkPathValue on NetworkPath {
       case NetworkPath.GET_CHART:
         return '/v2/chart?';
       case NetworkPath.WEB_SOCKET_BASE_URL:
-        return 'ws://api.hollaex.com';
+        return 'wss://api.hollaex.com';
       case NetworkPath.STREAM_PATH:
         return '/stream';
       default:

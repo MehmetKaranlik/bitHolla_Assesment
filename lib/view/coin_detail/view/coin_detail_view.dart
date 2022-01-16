@@ -54,26 +54,26 @@ class CoinDetailView extends BaseView<CoinDetailViewController> {
         DynamicVerticalSpace(),
         _buildTags(context),
         _buildSeperator(context),
-        _buildBuyerAndSellerStream()
+       _buildBuyerAndSellerStream()
       ],
     );
   }
 
-  Expanded _buildBuyerAndSellerStream() {
-    return Expanded(
-      child: Obx(() => StreamBuilder(
-            stream: controller.channel.stream,
-            builder: (context, AsyncSnapshot? snapshot) {
-              if (snapshot!.hasData && !snapshot.data.toString().contains('message')) {
-                print(snapshot.data);
-                var response = CoinAskAndBidModel.fromJson(jsonDecode(snapshot.data));
-                return _buildDoubleSidedListView(response);
-              }
-              return _buildPlaceHolder(context);
-            },
-          )),
-    );
-  }
+Expanded _buildBuyerAndSellerStream() {
+  return Expanded(
+    child: Obx(() => StreamBuilder(
+          stream: controller.channel.stream,
+          builder: (context, AsyncSnapshot? snapshot) {
+            if (snapshot!.hasData && !snapshot.data.toString().contains('message')) {
+              print(snapshot.data);
+              var response = CoinAskAndBidModel.fromJson(jsonDecode(snapshot.data));
+              return _buildDoubleSidedListView(response);
+            }
+            return _buildPlaceHolder(context);
+          },
+        )),
+  );
+}
 
   DoubleSidedListView _buildDoubleSidedListView(CoinAskAndBidModel response) {
     return DoubleSidedListView(
