@@ -1,0 +1,4 @@
+#Mon Jan 17 00:39:34 TRT 2022
+base.0=/Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/build/app/intermediates/dex/release/shrunkDex/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

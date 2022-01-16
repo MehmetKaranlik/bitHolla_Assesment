@@ -39,6 +39,10 @@ class CoinDetailViewController extends BaseController {
   bool get isLoading => _isLoading.value;
   set isLoading(bool val) => _isLoading.value = val;
 
+    final RxBool _isWebScoketLoading = true.obs;
+  bool get isWebScoketLoading => _isWebScoketLoading.value;
+  set isWebScoketLoading(bool val) => _isWebScoketLoading.value = val;
+
   @override
   void onReady() {
     createSocket();

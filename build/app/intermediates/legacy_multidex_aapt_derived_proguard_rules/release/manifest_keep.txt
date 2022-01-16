@@ -1,0 +1,4 @@
+# Referenced at /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/build/app/intermediates/merged_manifests/release/AndroidManifest.xml:13
+-keep class android.app.Application { <init>(); }
+# Referenced at /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/build/app/intermediates/merged_manifests/release/AndroidManifest.xml:13
+-keep class androidx.core.app.CoreComponentFactory { <init>(); }

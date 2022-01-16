@@ -1,0 +1,4 @@
+io/flutter/plugins/GeneratedPluginRegistrant.java
+ io.flutter.plugins.GeneratedPluginRegistrant
+com/bitholla_assesment/BuildConfig.java
+ com.bitholla_assesment.BuildConfig

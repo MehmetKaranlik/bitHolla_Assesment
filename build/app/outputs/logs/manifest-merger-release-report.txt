@@ -1,0 +1,148 @@
+-- Merging decision tree log ---
+application
+INJECTED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:3:4-33:19
+MERGED from [androidx.core:core:1.6.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/96cc54487146933726f3ebbc0e2b472c/core-1.6.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.6.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/96cc54487146933726f3ebbc0e2b472c/core-1.6.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/8153547c8aa789b8c9249d22773e7c0a/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/8153547c8aa789b8c9249d22773e7c0a/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.6.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/96cc54487146933726f3ebbc0e2b472c/core-1.6.0/AndroidManifest.xml:24:18-86
+	android:label
+		ADDED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:4:9-43
+	android:icon
+		ADDED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:6:9-43
+	android:name
+		INJECTED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:5:9-42
+manifest
+ADDED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:1:1-35:12
+INJECTED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:1:1-35:12
+INJECTED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:1:1-35:12
+INJECTED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:1:1-35:12
+MERGED from [:shared_preferences_android] /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/build/shared_preferences_android/intermediates/library_manifest/release/AndroidManifest.xml:2:1-7:12
+MERGED from [:path_provider_android] /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/build/path_provider_android/intermediates/library_manifest/release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.multidex:multidex:2.0.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/0d0f9439d0cbe3ff0494e7e4f3402f5b/multidex-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/d9464dbc08c895b1f2e1477a49e4de99/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/ba0ed3852e45bf3726a533d4e4fbf0b9/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/d9cd693768044a92c093f2217ad5966b/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/41d1ef9947e8be44eb8b98875ccb1c26/jetified-activity-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/12fc2fec749acc7075681c866ca6601f/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.6.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/96cc54487146933726f3ebbc0e2b472c/core-1.6.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/afc1ca8f387f80fb74ff6a4091c295d1/lifecycle-runtime-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/99897a0040a7e109979fcb74ed0e0a68/jetified-savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/16fe55c6ec952b4c75927979da92e371/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/58f7afda1917b20a2994f63e91d0eae7/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/865c29bc71848ac7423cc8048efb726f/jetified-tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/5a0f3acb2a68dca4decaac571de82581/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/8153547c8aa789b8c9249d22773e7c0a/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/8b5b5a5b70e754680680904925b49cf1/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/c8426b44f3244bc6168fe79c93c807a1/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
+INJECTED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:1:1-35:12
+INJECTED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:1:1-35:12
+INJECTED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:1:1-35:12
+	package
+		ADDED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:2:5-37
+		INJECTED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:1:1-35:12
+		INJECTED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:1:1-35:12
+		INJECTED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:34:5-67
+	android:name
+		ADDED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:34:22-64
+uses-sdk
+INJECTED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml
+MERGED from [:shared_preferences_android] /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/build/shared_preferences_android/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:shared_preferences_android] /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/build/shared_preferences_android/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:path_provider_android] /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/build/path_provider_android/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:path_provider_android] /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/build/path_provider_android/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.multidex:multidex:2.0.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/0d0f9439d0cbe3ff0494e7e4f3402f5b/multidex-2.0.0/AndroidManifest.xml:20:5-43
+MERGED from [androidx.multidex:multidex:2.0.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/0d0f9439d0cbe3ff0494e7e4f3402f5b/multidex-2.0.0/AndroidManifest.xml:20:5-43
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/d9464dbc08c895b1f2e1477a49e4de99/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/d9464dbc08c895b1f2e1477a49e4de99/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/ba0ed3852e45bf3726a533d4e4fbf0b9/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/ba0ed3852e45bf3726a533d4e4fbf0b9/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/d9cd693768044a92c093f2217ad5966b/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/d9cd693768044a92c093f2217ad5966b/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/41d1ef9947e8be44eb8b98875ccb1c26/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/41d1ef9947e8be44eb8b98875ccb1c26/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.0.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/12fc2fec749acc7075681c866ca6601f/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/12fc2fec749acc7075681c866ca6601f/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.6.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/96cc54487146933726f3ebbc0e2b472c/core-1.6.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.6.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/96cc54487146933726f3ebbc0e2b472c/core-1.6.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/afc1ca8f387f80fb74ff6a4091c295d1/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/afc1ca8f387f80fb74ff6a4091c295d1/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/99897a0040a7e109979fcb74ed0e0a68/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/99897a0040a7e109979fcb74ed0e0a68/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/16fe55c6ec952b4c75927979da92e371/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/16fe55c6ec952b4c75927979da92e371/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/58f7afda1917b20a2994f63e91d0eae7/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/58f7afda1917b20a2994f63e91d0eae7/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/865c29bc71848ac7423cc8048efb726f/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/865c29bc71848ac7423cc8048efb726f/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/5a0f3acb2a68dca4decaac571de82581/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/5a0f3acb2a68dca4decaac571de82581/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/8153547c8aa789b8c9249d22773e7c0a/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/8153547c8aa789b8c9249d22773e7c0a/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/8b5b5a5b70e754680680904925b49cf1/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/8b5b5a5b70e754680680904925b49cf1/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/c8426b44f3244bc6168fe79c93c807a1/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/mehmetkaranlik/.gradle/caches/transforms-2/files-2.1/c8426b44f3244bc6168fe79c93c807a1/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
+INJECTED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml
+activity#com.bitholla_assesment.MainActivity
+ADDED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:7:9-27:20
+	android:launchMode
+		ADDED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:10:13-43
+	android:hardwareAccelerated
+		ADDED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:13:13-47
+	android:windowSoftInputMode
+		ADDED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:14:13-55
+	android:exported
+		ADDED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:9:13-36
+	android:configChanges
+		ADDED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:12:13-163
+	android:theme
+		ADDED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:11:13-47
+	android:name
+		ADDED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:8:13-41
+meta-data#io.flutter.embedding.android.NormalTheme
+ADDED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:19:13-22:17
+	android:resource
+		ADDED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:21:15-52
+	android:name
+		ADDED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:20:15-70
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:23:13-26:29
+action#android.intent.action.MAIN
+ADDED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:24:17-68
+	android:name
+		ADDED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:24:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:25:17-76
+	android:name
+		ADDED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:25:27-74
+meta-data#flutterEmbedding
+ADDED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:30:9-32:33
+	android:value
+		ADDED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:32:13-30
+	android:name
+		ADDED from /Users/mehmetkaranlik/Desktop/TestRepos/bitHolla_Assesment/android/app/src/main/AndroidManifest.xml:31:13-44
