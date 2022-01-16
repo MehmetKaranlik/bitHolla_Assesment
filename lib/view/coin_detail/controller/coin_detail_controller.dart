@@ -39,7 +39,7 @@ class CoinDetailViewController extends BaseController {
   bool get isLoading => _isLoading.value;
   set isLoading(bool val) => _isLoading.value = val;
 
-    final RxBool _isWebScoketLoading = true.obs;
+  final RxBool _isWebScoketLoading = true.obs;
   bool get isWebScoketLoading => _isWebScoketLoading.value;
   set isWebScoketLoading(bool val) => _isWebScoketLoading.value = val;
 
@@ -64,7 +64,6 @@ class CoinDetailViewController extends BaseController {
   void dispose() {
     socketClosing();
   }
-
 
 // steps to cancel&close websocket
   void socketClosing() {

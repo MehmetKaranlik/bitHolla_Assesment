@@ -67,21 +67,17 @@ class CoinDetailView extends BaseView<CoinDetailViewController> {
           builder: (context, AsyncSnapshot? snapshot) {
             if (snapshot!.hasData) {
               print(snapshot.data);
-              return _buildListViewMethod(snapshot, tempResponse);
+              if (!snapshot.data.toString().contains('message')) {
+                var response = CoinAskAndBidModel.fromJson(jsonDecode(snapshot.data));
+                tempResponse = response;
+                return _buildDoubleSidedListView(response);
+              } else {
+                return _buildDoubleSidedListView(tempResponse);
+              }
             }
             return _buildPlaceHolder(context);
           })),
     );
-  }
-
-  DoubleSidedListView _buildListViewMethod(AsyncSnapshot<dynamic> snapshot, tempResponse) {
-    if (!snapshot.data.toString().contains('message')) {
-      var response = CoinAskAndBidModel.fromJson(jsonDecode(snapshot.data));
-      tempResponse = response;
-      return _buildDoubleSidedListView(response);
-    } else {
-      return _buildDoubleSidedListView(tempResponse);
-    }
   }
 
   DoubleSidedListView _buildDoubleSidedListView(CoinAskAndBidModel response) {
