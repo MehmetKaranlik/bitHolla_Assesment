@@ -1,5 +1,5 @@
-import 'package:bitholla_assesment/core/extension/context_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/src/extensions/context_extensions.dart';
 
 class ApplicationConstants {
   static ApplicationConstants? _instance;

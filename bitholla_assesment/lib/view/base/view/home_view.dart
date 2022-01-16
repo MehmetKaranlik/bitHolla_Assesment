@@ -4,6 +4,7 @@ import 'package:bitholla_assesment/view/base/controller/home_controller.dart';
 import 'package:bitholla_assesment/view/coin_detail/view/coin_detail_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/get_utils/src/extensions/context_extensions.dart';
 import 'package:sizer/sizer.dart';
 
 class HomeView extends BaseView<HomeController> {

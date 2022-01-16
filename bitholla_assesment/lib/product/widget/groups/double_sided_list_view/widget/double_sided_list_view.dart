@@ -1,9 +1,9 @@
-import 'package:bitholla_assesment/core/extension/context_extension.dart';
 import 'package:bitholla_assesment/core/widget/sizedBox/dynamic_horizontol_space.dart';
 import 'package:bitholla_assesment/core/widget/sizedBox/dynamic_veritical_space.dart';
 import 'package:bitholla_assesment/product/widget/groups/double_sided_list_view/controller/double_sided_list_view_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/get_utils/src/extensions/context_extensions.dart';
 import 'package:get/instance_manager.dart';
 import 'package:sizer/sizer.dart';
 
@@ -161,5 +161,4 @@ class _DoubleSidedListViewState extends State<DoubleSidedListView> {
               : context.theme.colorScheme.error),
     );
   }
-
 }

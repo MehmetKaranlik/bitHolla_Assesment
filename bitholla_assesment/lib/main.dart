@@ -1,12 +1,14 @@
 import 'package:bitholla_assesment/core/base/binding/base_bindings.dart';
-
+import 'package:bitholla_assesment/core/init/cache/locale_manager.dart';
 import 'package:bitholla_assesment/core/init/theme/app_theme_light.dart';
 import 'package:bitholla_assesment/view/base/view/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await LocaleManager.prefrencesInit();
   runApp(const MyApp());
 }
 
