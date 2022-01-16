@@ -104,52 +104,64 @@ class CoinDetailView extends BaseView<CoinDetailViewController> {
         DynamicHorizontalSpace(
           width: 2.w,
         ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              'amount'.tr,
-              style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
-            ),
-            Text(
-              "(XHT)",
-              style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
-            )
-          ],
-        ),
+        _buildLeftAmountTag(context),
         const Spacer(),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              'price'.tr,
-              style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
-            ),
-            Text(
-              "(USDT)",
-              style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
-            )
-          ],
-        ),
+        _buildPriceTag(context),
         const Spacer(),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              'amount'.tr,
-              style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
-            ),
-            Text(
-              "(XHT)",
-              style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
-            )
-          ],
-        ),
+        _buildRightAmountTag(context),
         DynamicHorizontalSpace(
           width: 2.w,
         )
       ],
     );
+  }
+
+  Column _buildRightAmountTag(BuildContext context) {
+    return Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            'amount'.tr,
+            style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
+          ),
+          Text(
+            "(XHT)",
+            style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
+          )
+        ],
+      );
+  }
+
+  Column _buildPriceTag(BuildContext context) {
+    return Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            'price'.tr,
+            style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
+          ),
+          Text(
+            "(USDT)",
+            style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
+          )
+        ],
+      );
+  }
+
+  Column _buildLeftAmountTag(BuildContext context) {
+    return Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            'amount'.tr,
+            style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
+          ),
+          Text(
+            "(XHT)",
+            style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
+          )
+        ],
+      );
   }
 
   Row _buildSeperator(BuildContext context) {
