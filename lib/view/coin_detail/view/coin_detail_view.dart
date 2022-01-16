@@ -19,7 +19,8 @@ import 'package:sizer/sizer.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class CoinDetailView extends BaseView<CoinDetailViewController> {
-  const CoinDetailView({Key? key}) : super(key: key);
+  var tempResponse;
+  CoinDetailView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -60,9 +61,9 @@ class CoinDetailView extends BaseView<CoinDetailViewController> {
   }
 
   Expanded _buildBuyerAndSellerStream() {
-    var tempResponse;
     return Expanded(
-      child: Obx(() => StreamBuilder(
+      child: Obx(
+        () => StreamBuilder(
           stream: controller.channel.stream,
           builder: (context, AsyncSnapshot? snapshot) {
             if (snapshot!.hasData) {
@@ -72,11 +73,13 @@ class CoinDetailView extends BaseView<CoinDetailViewController> {
                 tempResponse = response;
                 return _buildDoubleSidedListView(response);
               } else {
-                return _buildDoubleSidedListView(tempResponse);
+                return tempResponse != null ? _buildDoubleSidedListView(tempResponse) : const SizedBox.shrink();
               }
             }
             return _buildPlaceHolder(context);
-          })),
+          },
+        ),
+      ),
     );
   }
 

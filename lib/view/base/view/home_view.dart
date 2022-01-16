@@ -26,7 +26,7 @@ Widget showSelectedBody(int index) {
     case 1:
       return Container();
     case 2:
-      return const CoinDetailView();
+      return  CoinDetailView();
     case 3:
       return Container();
     default:

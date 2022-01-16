@@ -93,12 +93,6 @@ class CoinDetailViewController extends BaseController {
     });
     channel.sink.add(
       jsonEncode(
-        {'op': 'ping'},
-      ),
-    );
-
-    channel.sink.add(
-      jsonEncode(
         {
           'op': 'subscribe',
           'args': ['orderbook:xht-usdt']
