@@ -24,21 +24,21 @@ class _CoinDetailTabGroupState extends State<CoinDetailTabGroup> {
           mainAxisSize: MainAxisSize.min,
           children: [
             CoinDetailTabButton(
-              buttonText: "Coin info",
+              buttonText: 'coinInfo'.tr,
               isSelected: true,
               onTap: () => _controller.selectedTabTag = 0,
               itemIndex: 0,
               tag: _controller.selectedTabTag,
             ),
             CoinDetailTabButton(
-              buttonText: "Markets",
+              buttonText: 'markets'.tr,
               isSelected: true,
               onTap: () => _controller.selectedTabTag = 1,
               itemIndex: 1,
               tag: _controller.selectedTabTag,
             ),
             CoinDetailTabButton(
-              buttonText: "Holdings",
+              buttonText: 'holdings'.tr,
               isSelected: true,
               onTap: () => _controller.selectedTabTag = 2,
               itemIndex: 2,

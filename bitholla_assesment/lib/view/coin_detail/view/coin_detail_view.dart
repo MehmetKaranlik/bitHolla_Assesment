@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:bitholla_assesment/core/base/view/base_view.dart';
-import 'package:bitholla_assesment/core/constants/assets/svg_constants.dart';
+import 'package:bitholla_assesment/core/constants/assets/image_constants.dart';
 import 'package:bitholla_assesment/core/widget/sizedBox/dynamic_horizontol_space.dart';
 import 'package:bitholla_assesment/core/widget/sizedBox/dynamic_veritical_space.dart';
 import 'package:bitholla_assesment/product/widget/groups/chart_sorter/widget/chart_sort_button_group.dart';
@@ -10,9 +10,10 @@ import 'package:bitholla_assesment/product/widget/groups/double_sided_list_view/
 import 'package:bitholla_assesment/view/coin_detail/controller/coin_detail_controller.dart';
 import 'package:bitholla_assesment/view/coin_detail/model/coin_ask_and_bid_model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get/get_utils/src/extensions/context_extensions.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
+import 'package:intl/intl.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:sizer/sizer.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
@@ -90,7 +91,7 @@ class CoinDetailView extends BaseView<CoinDetailViewController> {
           baseColor: context.theme.colorScheme.onPrimary,
           highlightColor: context.theme.colorScheme.primary,
           child: Text(
-            "Loading...",
+            'loading'.tr,
             style: context.textTheme.headline1!.copyWith(fontSize: 30.sp),
           )),
     );
@@ -107,7 +108,7 @@ class CoinDetailView extends BaseView<CoinDetailViewController> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              "Amount",
+              'amount'.tr,
               style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
             ),
             Text(
@@ -121,7 +122,7 @@ class CoinDetailView extends BaseView<CoinDetailViewController> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              "Price",
+              'price'.tr,
               style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
             ),
             Text(
@@ -135,7 +136,7 @@ class CoinDetailView extends BaseView<CoinDetailViewController> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              "Amount",
+              'amount'.tr,
               style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
             ),
             Text(
@@ -171,7 +172,7 @@ class CoinDetailView extends BaseView<CoinDetailViewController> {
 
   Text _buildRightSideText(BuildContext context) {
     return Text(
-      "Seller",
+      'seller'.tr,
       style: context.textTheme.bodyText1,
     );
   }
@@ -200,21 +201,21 @@ class CoinDetailView extends BaseView<CoinDetailViewController> {
 
   Text _buildLeftSideText(BuildContext context) {
     return Text(
-      "Buyer",
+      'buyer'.tr,
       style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.error),
     );
   }
 
   Text _buildDateTimeNow(BuildContext context) {
     return Text(
-      "12", //DateFormat.yMd().add_jm().format(DateTime.now()),
+      DateFormat.yMd().add_jm().format(DateTime.now()),
       style: context.textTheme.subtitle2!.copyWith(color: context.theme.colorScheme.onPrimary),
     );
   }
 
   Text _buildWalletAmount(BuildContext context) {
     return Text(
-      "\$" "${controller.chartData.last.high}",
+      "\$" "${controller.chartData.first.high}",
       style: context.textTheme.headline3!.copyWith(
         color: context.theme.colorScheme.secondary,
       ),
@@ -272,6 +273,7 @@ class CoinDetailView extends BaseView<CoinDetailViewController> {
 
   AppBar _buildAppBar(BuildContext context) {
     return AppBar(
+      centerTitle: true,
       title: _buildAppBarTitle(context),
       actions: _buildAppBarActions(context),
     );
@@ -291,11 +293,13 @@ class CoinDetailView extends BaseView<CoinDetailViewController> {
   Row _buildAppBarTitle(BuildContext context) {
     return Row(
       children: [
-        SvgPicture.asset(
-          SvgConstants.instance.bitcoinIcon,
-          height: 6.3.w,
+        Image.asset(
+          ImageConstants.instance.coinLogo,
+          height: 4.h,
         ),
-        DynamicHorizontalSpace(),
+        DynamicHorizontalSpace(
+          width: 1.w,
+        ),
         Text(
           "XHT / USDT",
           style: context.textTheme.headline3!.copyWith(
