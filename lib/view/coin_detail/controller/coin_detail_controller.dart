@@ -58,6 +58,12 @@ class CoinDetailViewController extends BaseController {
 
   @override
   void dispose() {
+    socketClosing();
+  }
+
+
+// steps to cancel&close websocket
+  void socketClosing() {
     _timer.cancel();
     channel.stream.listen(
       (event) {},

@@ -54,26 +54,26 @@ class CoinDetailView extends BaseView<CoinDetailViewController> {
         DynamicVerticalSpace(),
         _buildTags(context),
         _buildSeperator(context),
-       _buildBuyerAndSellerStream()
+        _buildBuyerAndSellerStream()
       ],
     );
   }
 
-Expanded _buildBuyerAndSellerStream() {
-  return Expanded(
-    child: Obx(() => StreamBuilder(
-          stream: controller.channel.stream,
-          builder: (context, AsyncSnapshot? snapshot) {
-            if (snapshot!.hasData && !snapshot.data.toString().contains('message')) {
-              print(snapshot.data);
-              var response = CoinAskAndBidModel.fromJson(jsonDecode(snapshot.data));
-              return _buildDoubleSidedListView(response);
-            }
-            return _buildPlaceHolder(context);
-          },
-        )),
-  );
-}
+  Expanded _buildBuyerAndSellerStream() {
+    return Expanded(
+      child: Obx(() => StreamBuilder(
+            stream: controller.channel.stream,
+            builder: (context, AsyncSnapshot? snapshot) {
+              if (snapshot!.hasData && !snapshot.data.toString().contains('message')) {
+                print(snapshot.data);
+                var response = CoinAskAndBidModel.fromJson(jsonDecode(snapshot.data));
+                return _buildDoubleSidedListView(response);
+              } 
+              return _buildPlaceHolder(context);
+            },
+          )),
+    );
+  }
 
   DoubleSidedListView _buildDoubleSidedListView(CoinAskAndBidModel response) {
     return DoubleSidedListView(
@@ -118,50 +118,50 @@ Expanded _buildBuyerAndSellerStream() {
 
   Column _buildRightAmountTag(BuildContext context) {
     return Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(
-            'amount'.tr,
-            style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
-          ),
-          Text(
-            "(XHT)",
-            style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
-          )
-        ],
-      );
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Text(
+          'amount'.tr,
+          style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
+        ),
+        Text(
+          "(XHT)",
+          style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
+        )
+      ],
+    );
   }
 
   Column _buildPriceTag(BuildContext context) {
     return Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(
-            'price'.tr,
-            style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
-          ),
-          Text(
-            "(USDT)",
-            style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
-          )
-        ],
-      );
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Text(
+          'price'.tr,
+          style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
+        ),
+        Text(
+          "(USDT)",
+          style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
+        )
+      ],
+    );
   }
 
   Column _buildLeftAmountTag(BuildContext context) {
     return Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(
-            'amount'.tr,
-            style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
-          ),
-          Text(
-            "(XHT)",
-            style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
-          )
-        ],
-      );
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Text(
+          'amount'.tr,
+          style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
+        ),
+        Text(
+          "(XHT)",
+          style: context.textTheme.bodyText1!.copyWith(color: context.theme.colorScheme.secondary, fontSize: 10.sp),
+        )
+      ],
+    );
   }
 
   Row _buildSeperator(BuildContext context) {
